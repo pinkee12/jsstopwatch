@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width:250px;
+            height:270px;
+            border:2px solid rgb(48, 150, 104);
+        }
+        #box1{
+            height:60%;
+            width:100%;
+            text-align: center;
+           
+        }
+        #box2{
+            height:30%;
+            width:90%;
+            text-align: center;
+            padding:10px;
+          
+
+        }
+        button{
+            height:50px;
+            width:70px;
+            color:rgb(153, 35, 35);
+            background-color: rgb(15, 152, 90);
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="box1"><h1 id="innerText"><center>0:0:0</center></h1></div>
+        <div id="box2">
+            <button id="start" onclick="begin()" >start</button>
+            <button id="stop" onclick="pause()">pause</button>
+            <button id="reset" onclick="reset()">reset</button>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
+<script>
+    let text=document.getElementById("innerText")
+let count=0
+function begin(){
+    
+    id=setInterval(()=>{
+        let hr=Math.floor(Number(count)/3600)
+        let min=Math.floor((Number(count)%3600)/60)
+        let sec=Math.floor((Number(count)%3600)%60)
+        text.innerText=hr +":"+min+":" +sec
+        count+=1
+    },100)
+
+}
+function pause(){
+    clearInterval(id)
+
+}
+
+function reset(){
+    pause()
+    text.innerText=0 +":"+0+":" +0
+    count=0
+   
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
